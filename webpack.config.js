@@ -29,7 +29,8 @@ var config = {
     entry: {
         'polyfills': './src/polyfills.ts',
         'vendor': './src/vendor.ts',
-        'app': './src/app/app'
+        //Fix for webpack error dependency not allowed https://github.com/webpack/webpack/issues/300
+        'app': ['./src/app/app'],
     },
 
     // Config for our build files

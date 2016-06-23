@@ -1,12 +1,10 @@
 /*
  * Providers provided by Angular
  */
-import {Component, provide, enableProdMode} from '@angular/core';
-import {bootstrap} from '@angular/platform-browser-dynamic';
-import {LocationStrategy, HashLocationStrategy} from '@angular/common';
+import {Component} from '@angular/core';
 
 // ROUTER
-import {ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
+import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 
 /**
  * Import our child components
@@ -35,11 +33,8 @@ export class AppComponent {
 
 }
 
-/*
- * Bootstrap our Angular app with a top level component `App` and inject
- * our Services and Providers into Angular's dependency injection
+/**
+ * Import the bootstrap from the main-boot module
  */
-bootstrap(AppComponent, [
-    ...ROUTER_PROVIDERS,
-    provide(LocationStrategy, { useClass: HashLocationStrategy }),
-]).catch(err => console.error(err));
+import {bootStrapCall} from './main-boot';
+bootStrapCall();
