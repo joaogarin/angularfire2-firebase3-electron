@@ -1,7 +1,7 @@
 /**
  * Import decorators and services from angular
  */
-import {Component, Inject} from '@angular/core';
+import {Component} from '@angular/core';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 
 @Component({
