@@ -2,7 +2,12 @@
  * Import decorators and services from angular
  */
 import {Component} from '@angular/core';
-import {AngularFire, FirebaseListObservable} from 'angularfire2';
+import {AngularFire, FirebaseListObservable, defaultFirebase} from 'angularfire2';
+
+/**
+ * Basic configuration like Endpoint URL's, API version..
+ */
+const options = require('./../config.json');
 
 @Component({
   selector: 'ae-home',
@@ -21,9 +26,19 @@ import {AngularFire, FirebaseListObservable} from 'angularfire2';
 export class HomeComponent {
   name: string;
   items: FirebaseListObservable<any[]>;
+  ref: firebase.database.Reference;
+  app: any;
 
   constructor(af: AngularFire) {
     this.name = 'Firebase';
-    this.items = af.database.list('/items');
+
+    // Initialize ref
+    this.app = firebase.initializeApp({
+      serviceAccount: options.firebase.serviceAccount,
+      databaseURL: options.firebase.databaseURL
+    });
+
+    const itemsRef = this.app.database().ref().child('items');
+    af.database.list(itemsRef);
   }
 }

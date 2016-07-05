@@ -16,13 +16,6 @@ let PROVIDERS = [
     ...ROUTER_PROVIDERS,
     ...HTTP_PROVIDERS,
     ...FIREBASE_PROVIDERS,
-    // Initialize Firebase app
-    defaultFirebase({
-        apiKey: options.firebase.apiKey,
-        authDomain: options.firebase.authDomain,
-        databaseURL: options.firebase.databaseURL,
-        storageBucket: options.firebase.storageBucket,
-    })
 ];
 
 export {PROVIDERS};
