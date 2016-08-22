@@ -1,8 +1,8 @@
 # Angular 2 electron app featuring webpack
 
-A working demo of [electron] with [angular2] using [Webpack] and [angularfire2]
+A working demo of [electron] with [angular2] using [Webpack]
 
-This is a demo of angularfire2 with firebase 3 and electron. You should create a config file as following :
+This is a demo of angular2 with firebase 3 and electron. You should create a config file as following :
 
 ```javascript
 {
@@ -11,7 +11,6 @@ This is a demo of angularfire2 with firebase 3 and electron. You should create a
         "authDomain": "yourfireID.firebaseapp.com",
         "databaseURL": "https://yourfireID.firebaseio.com",
         "storageBucket": "",
-        "serviceAccount": "urlforyourserviceacountJSON"
     }
 }
 ```
@@ -35,4 +34,3 @@ $ npm run electron
 [MIT]: http://markdalgleish.mit-license.org
 [angular2]: http://angular.io
 [electron]: http://electron.atom.io/
-[angularfire2]: https://github.com/angular/angularfire2
