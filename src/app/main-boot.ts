@@ -15,11 +15,21 @@ import {AppComponent} from './app';
  */
 const options = require('./config.json');
 
+import * as firebase from 'firebase';
+
+// Initialize Firebase
+var config = {
+  apiKey: 'AIzaSyCaxB-HRu9uNAYUikwwyHshZSSyFeNu2Rw',
+  authDomain: 'angular2fire3.firebaseapp.com',
+  databaseURL: 'https://angular2fire3.firebaseio.com',
+  storageBucket: 'angular2fire3.appspot.com',
+};
+firebase.initializeApp(config);
+
 /*
  * Bootstrap our Angular app with a top level component `App` and inject
  * our Services and Providers into Angular's dependency injection
  */
-
 export function bootStrapCall() {
   return bootstrap(AppComponent, [
     ...PROVIDERS,
