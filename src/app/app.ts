@@ -4,7 +4,7 @@
 import {Component} from '@angular/core';
 
 // ROUTER
-import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {ROUTER_DIRECTIVES} from '@angular/router';
 
 /**
  * Import our child components
@@ -25,10 +25,6 @@ import {HomeComponent} from './components/home';
     </div>
     `
 })
-@RouteConfig([
-    { path: '/', component: HomeComponent, name: 'Home' },
-    { path: '/home', component: HomeComponent, name: 'Home' }
-])
 export class AppComponent {
 
 }

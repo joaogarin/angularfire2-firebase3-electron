@@ -1,11 +1,11 @@
 /*
  * Providers provided by Angular
  */
-import {ROUTER_PROVIDERS} from '@angular/router-deprecated';
+import { provide, enableProdMode, PLATFORM_DIRECTIVES } from '@angular/core';
 import {HTTP_PROVIDERS} from '@angular/http';
-
-// Firebase providers
-import {FIREBASE_PROVIDERS, defaultFirebase} from 'angularfire2';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { ROUTER_DIRECTIVES, provideRouter } from '@angular/router';
+import { routes } from './../app.routes';
 
 /**
  * Basic configuration like Endpoint URL's, API version..
@@ -13,9 +13,10 @@ import {FIREBASE_PROVIDERS, defaultFirebase} from 'angularfire2';
 const options = require('./../config.json');
 
 let PROVIDERS = [
-    ...ROUTER_PROVIDERS,
     ...HTTP_PROVIDERS,
-    ...FIREBASE_PROVIDERS,
+    provideRouter(routes),
+    provide(PLATFORM_DIRECTIVES, { useValue: [ROUTER_DIRECTIVES], multi: true }),
+    provide(LocationStrategy, { useClass: HashLocationStrategy }),
 ];
 
 export {PROVIDERS};
