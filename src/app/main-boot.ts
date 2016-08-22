@@ -19,10 +19,10 @@ import * as firebase from 'firebase';
 
 // Initialize Firebase
 var config = {
-  apiKey: 'AIzaSyCaxB-HRu9uNAYUikwwyHshZSSyFeNu2Rw',
-  authDomain: 'angular2fire3.firebaseapp.com',
-  databaseURL: 'https://angular2fire3.firebaseio.com',
-  storageBucket: 'angular2fire3.appspot.com',
+  apiKey: config.firebase.apiKey,
+  authDomain: config.firebase.authDomain,
+  databaseURL: config.firebase.databaseURL,
+  storageBucket: config.firebase.storageBucket,
 };
 firebase.initializeApp(config);
 
