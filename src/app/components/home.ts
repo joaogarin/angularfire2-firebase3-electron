@@ -1,8 +1,7 @@
 /**
  * Import decorators and services from angular
  */
-import {Component, OnInit, NgZone} from '@angular/core';
-import { MessageListComponent } from './messageList.component';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 /**
@@ -12,7 +11,6 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
   selector: 'ae-home',
-  directives: [MessageListComponent],
   template: `
     <div>
        <h1>{{name}}</h1>

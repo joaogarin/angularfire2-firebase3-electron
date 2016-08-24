@@ -15,6 +15,9 @@
     "src/custom_typings.d.ts",
     "typings/index.d.ts"
   ],
+  "files": [
+    "node_modules/angularfire2/firebase3.d.ts"
+  ],
   "compileOnSave": false,
   "buildOnSave": false,
   "atom": { "rewriteTsconfig": false }

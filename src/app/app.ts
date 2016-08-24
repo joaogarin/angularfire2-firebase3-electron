@@ -1,12 +1,14 @@
 /*
  * Angular Modules
  */
-import {provide, enableProdMode, PLATFORM_DIRECTIVES, NgModule, Component} from '@angular/core';
+import { provide, enableProdMode, PLATFORM_DIRECTIVES, NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { platformBrowserDynamic, bootstrap } from '@angular/platform-browser-dynamic';
-import {LocationStrategy, HashLocationStrategy} from '@angular/common';
-import {ROUTER_DIRECTIVES} from '@angular/router';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+
+import * as firebase from 'firebase';
 
 /**
  * Libraries
@@ -16,12 +18,12 @@ import { AngularFireModule } from 'angularfire2';
 /**
  * Providers
  */
-import {PROVIDERS} from './providers/providers';
+import { PROVIDERS } from './providers/providers';
 
 /**
  * Import our child components
  */
-import {HomeComponent} from './components/home';
+import { HomeComponent } from './components/home';
 
 
 /**

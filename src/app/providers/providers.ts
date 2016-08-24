@@ -2,7 +2,7 @@
  * Providers provided by Angular
  */
 import { provide, enableProdMode, PLATFORM_DIRECTIVES } from '@angular/core';
-import {HTTP_PROVIDERS} from '@angular/http';
+import { HTTP_PROVIDERS } from '@angular/http';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { provideForms, disableDeprecatedForms } from '@angular/forms';
 
