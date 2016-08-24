@@ -4,7 +4,7 @@
 import { provide, enableProdMode, PLATFORM_DIRECTIVES } from '@angular/core';
 import {HTTP_PROVIDERS} from '@angular/http';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { FormsModule, provideForms, disableDeprecatedForms } from '@angular/forms';
+import { provideForms, disableDeprecatedForms } from '@angular/forms';
 
 import { ROUTER_DIRECTIVES, provideRouter } from '@angular/router';
 import { routes } from './../app.routes';
