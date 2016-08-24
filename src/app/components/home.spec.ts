@@ -21,19 +21,18 @@ import {HomeComponent} from './home';
 const options = require('./../config.json');
 
 describe('App component', () => {
-
     @Component({
         template: ``,
         directives: [HomeComponent]
     })
-    class HomeTest {}
+    class HomeTest { }
 
     it('shoud render with h1 Firebase', async(inject([TestComponentBuilder], (tcb) => {
         tcb.overrideTemplate(HomeTest, '<ae-home></ae-home>')
             .createAsync(HomeTest).then((fixture: ComponentFixture<HomeTest>) => {
                 fixture.detectChanges();
                 let compiled = fixture.debugElement.nativeElement;
-                expect(compiled.querySelector('h1')).toHaveText('Firebase');
+                expect(compiled.querySelector('h1')).toHaveText('Firebase SDK 3');
             });
     })));
 });
