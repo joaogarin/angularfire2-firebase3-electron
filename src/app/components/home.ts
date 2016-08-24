@@ -2,7 +2,7 @@
  * Import decorators and services from angular
  */
 import {Component, OnInit, NgZone} from '@angular/core';
-
+import { FormsModule, provideForms, disableDeprecatedForms } from '@angular/forms';
 import { MessageListComponent } from './messageList.component';
 
 /**
