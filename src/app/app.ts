@@ -29,8 +29,6 @@ import {HomeComponent} from './components/home';
  */
 const options = require('./config.json');
 
-import * as firebase from 'firebase';
-
 // Initialize Firebase
 export const firebaseConfig = {
     apiKey: options.firebase.apiKey,
@@ -72,7 +70,3 @@ export class AppComponent {
 })
 export class AppModule { }
 platformBrowserDynamic().bootstrapModule(AppModule);
-
-/*bootstrap(AppComponent, [
-    ...PROVIDERS,
-  ]);*/
