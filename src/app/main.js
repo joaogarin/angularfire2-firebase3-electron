@@ -1,7 +1,7 @@
 /**
  * Include our app
  */
-var app = require('app'); 
+var app = require('app');
 
 // browser-window creates a native window
 var BrowserWindow = require('browser-window');
