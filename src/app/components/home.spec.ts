@@ -1,38 +1,48 @@
 import {
-    iit,
-    it,
-    ddescribe,
-    describe,
-    expect,
     async,
     inject,
-    beforeEachProviders
+    TestBed,
 } from '@angular/core/testing';
-import {
-    TestComponentBuilder,
-    ComponentFixture
-} from '@angular/compiler/testing';
-import { Component, provide } from '@angular/core';
-import {HomeComponent} from './home';
+import { Component } from '@angular/core';
+import { HomeComponent } from './home.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+/**
+ * Libraries
+ */
+import 'firebase';
+import { AngularFire, AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
 /**
  * Basic configuration like Endpoint URL's, API version..
  */
 const options = require('./../config.json');
 
-describe('App component', () => {
-    @Component({
-        template: ``,
-        directives: [HomeComponent]
-    })
-    class HomeTest { }
+// Initialize Firebase
+export const firebaseConfig = {
+    apiKey: options.firebase.apiKey,
+    authDomain: options.firebase.authDomain,
+    databaseURL: options.firebase.databaseURL,
+    storageBucket: options.firebase.storageBucket,
+};
+const firebaseAuthConfig = {
+    provider: AuthProviders.Password,
+    method: AuthMethods.Password,
+};
 
-    it('shoud render with h1 Firebase', async(inject([TestComponentBuilder], (tcb) => {
-        tcb.overrideTemplate(HomeTest, '<ae-home></ae-home>')
-            .createAsync(HomeTest).then((fixture: ComponentFixture<HomeTest>) => {
-                fixture.detectChanges();
-                let compiled = fixture.debugElement.nativeElement;
-                expect(compiled.querySelector('h1')).toHaveText('Firebase SDK 3');
-            });
-    })));
+describe('App component', () => {
+    beforeEach(() => TestBed.configureTestingModule({
+        imports: [
+            FormsModule,
+            ReactiveFormsModule,
+            AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
+        ],
+        providers: [
+            HomeComponent,
+        ],
+    }));
+
+    it('should have default data', inject([HomeComponent], (home: HomeComponent) => {
+        expect(home.name).toEqual('Firebase SDK 3');
+    }));
 });

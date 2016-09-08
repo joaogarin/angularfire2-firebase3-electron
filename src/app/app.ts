@@ -5,18 +5,21 @@ import { enableProdMode, NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 /**
  * Libraries
  */
-import { AngularFireModule } from 'angularfire2';
+import { AngularFire, AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 
 /**
  * Import our child components
  */
-import { HomeComponent } from './components/home';
+import { HomeComponent } from './components/home.component';
+import { LoginComponent } from './components/login.component';
+import { RegisterComponent } from './components/register.component';
+import { AppComponent } from './components/app.component';
 
 import { routes } from './app.routes';
 
@@ -33,23 +36,10 @@ export const firebaseConfig = {
     storageBucket: options.firebase.storageBucket,
 };
 
-
-/*
- * App Component
- * Top Level Component
- */
-@Component({
-    // The selector is what angular internally uses
-    selector: 'ae-app', // <app></app>
-    template: `
-    <div>
-        <router-outlet></router-outlet>
-    </div>
-    `
-})
-export class AppComponent {
-
-}
+const firebaseAuthConfig = {
+    provider: AuthProviders.Password,
+    method: AuthMethods.Password,
+};
 
 @NgModule({
     imports: [
@@ -57,12 +47,9 @@ export class AppComponent {
         FormsModule,
         ReactiveFormsModule,
         RouterModule.forRoot(routes, { useHash: true }),
-        AngularFireModule.initializeApp(firebaseConfig),
+        AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
     ],
-    declarations: [AppComponent, HomeComponent],
-    providers: [ // expose our Services and Providers into Angular's dependency injection
-
-    ],
+    declarations: [AppComponent, HomeComponent, LoginComponent, RegisterComponent],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
