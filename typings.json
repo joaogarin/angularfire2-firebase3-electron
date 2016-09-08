@@ -1,16 +1,14 @@
 {
   "globalDependencies": {
-    "angular-protractor": "github:DefinitelyTyped/DefinitelyTyped/angular-protractor/angular-protractor.d.ts#64b25f63f0ec821040a5d3e049a976865062ed9d",
     "core-js": "registry:dt/core-js#0.0.0+20160602141332",
     "electron-prebuilt": "github:DefinitelyTyped/DefinitelyTyped/github-electron/electron-prebuilt.d.ts#56295f5058cac7ae458540423c50ac2dcf9fc711",
-    "github-electron": "registry:dt/github-electron#1.2.5+20160812193136",
+    "github-electron": "registry:dt/github-electron#1.3.4+20160831020201",
     "jasmine": "registry:dt/jasmine#2.2.0+20160621224255",
-    "node": "registry:dt/node#6.0.0+20160802155038",
+    "node": "registry:dt/node#6.0.0+20160907173219",
     "react": "registry:dt/react#0.14.0+20160817201227",
     "selenium-webdriver": "github:DefinitelyTyped/DefinitelyTyped/selenium-webdriver/selenium-webdriver.d.ts#a83677ed13add14c2ab06c7325d182d0ba2784ea",
     "source-map": "registry:dt/source-map#0.0.0+20160317120654",
     "uglify-js": "registry:dt/uglify-js#2.6.1+20160316155526",
-    "webpack": "registry:dt/webpack#1.12.9+20160724112410",
-    "zone.js": "github:gdi2290/typed-zone.js#66ea8a3451542bb7798369306840e46be1d6ec89"
+    "webpack": "registry:dt/webpack#1.12.9+20160724112410"
   }
 }

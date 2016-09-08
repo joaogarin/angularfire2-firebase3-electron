@@ -11,12 +11,7 @@
   ],
   "filesGlob": [
     "./src/**/*.ts",
-    "!./node_modules/**/*.ts",
-    "src/custom_typings.d.ts",
-    "typings/index.d.ts"
-  ],
-  "files": [
-    "node_modules/angularfire2/firebase3.d.ts"
+    "./typings/index.d.ts"
   ],
   "compileOnSave": false,
   "buildOnSave": false,

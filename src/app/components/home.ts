@@ -3,20 +3,19 @@
  */
 import { Component, OnInit, NgZone } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { FormGroup, FormControl } from '@angular/forms';
 
 /**
  * Include firebaseAuth from Firebase2 package
  */
-//import * as firebase from 'firebase';
-
 @Component({
   selector: 'ae-home',
   template: `
     <div>
        <h1>{{name}}</h1>
        <h3>Add a new message</h3>
-       <div class="add-messages-wrapper">
-        <input type="text" [(ngModel)]='messageText' />
+       <div [formGroup]="messageForm" class="add-messages-wrapper">
+        <input type="text" formControlName="messageText"/>
         <button type="submit" value="submit" (click)="addMessage();">Submit</button>
        </div>
        <h3>List of items</h3>
@@ -32,6 +31,10 @@ export class HomeComponent implements OnInit {
   name: string;
   messageText: string = '';
   items: FirebaseListObservable<any[]>;
+
+  messageForm = new FormGroup({
+    messageText: new FormControl(),
+  });
 
   constructor(private ngZone: NgZone, private af: AngularFire) {
     this.name = 'Firebase SDK 3';
@@ -50,7 +53,7 @@ export class HomeComponent implements OnInit {
   // Add a new message to fireabse
   addMessage() {
     this.af.database.list('messages').push({
-      text: this.messageText
+      text: this.messageForm.controls['messageText'].value
     });
     this.clearBox();
   }

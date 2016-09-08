@@ -1,14 +1,12 @@
 /*
  * Angular Modules
  */
-import { provide, enableProdMode, PLATFORM_DIRECTIVES, NgModule, Component } from '@angular/core';
+import { enableProdMode, NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { platformBrowserDynamic, bootstrap } from '@angular/platform-browser-dynamic';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { ROUTER_DIRECTIVES } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-
-import * as firebase from 'firebase';
+import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 /**
  * Libraries
@@ -16,15 +14,11 @@ import * as firebase from 'firebase';
 import { AngularFireModule } from 'angularfire2';
 
 /**
- * Providers
- */
-import { PROVIDERS } from './providers/providers';
-
-/**
  * Import our child components
  */
 import { HomeComponent } from './components/home';
 
+import { routes } from './app.routes';
 
 /**
  * Basic configuration like Endpoint URL's, API version..
@@ -47,7 +41,6 @@ export const firebaseConfig = {
 @Component({
     // The selector is what angular internally uses
     selector: 'ae-app', // <app></app>
-    directives: [ROUTER_DIRECTIVES, HomeComponent],
     template: `
     <div>
         <router-outlet></router-outlet>
@@ -62,11 +55,13 @@ export class AppComponent {
     imports: [
         BrowserModule,
         FormsModule,
-        AngularFireModule.initializeApp(firebaseConfig)
+        ReactiveFormsModule,
+        RouterModule.forRoot(routes, { useHash: true }),
+        AngularFireModule.initializeApp(firebaseConfig),
     ],
-    declarations: [AppComponent],
+    declarations: [AppComponent, HomeComponent],
     providers: [ // expose our Services and Providers into Angular's dependency injection
-        ...PROVIDERS,
+
     ],
     bootstrap: [AppComponent]
 })

@@ -8,7 +8,9 @@ import '@angular/platform-browser';
 import '@angular/core';
 import '@angular/http';
 import '@angular/router';
+import '@angular/forms';
 
+import 'firebase';
 
 // RxJS
 import 'rxjs/add/operator/map';
