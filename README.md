@@ -15,7 +15,7 @@ This is a demo of angular2 with firebase 3 and electron. You should create a con
 }
 ```
 
-and place this file inside the "app" folder.  
+and place this file inside the "src/app" folder.  
 
 ## Run the example
 
