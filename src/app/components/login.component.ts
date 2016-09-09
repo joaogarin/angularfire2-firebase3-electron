@@ -13,9 +13,12 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
     template: `
     <div>
        <h1>Login to firebase</h1>
-       <div [formGroup]="loginForm" class="add-messages-wrapper">
+       <div [formGroup]="loginForm">
         <input type="email" formControlName="email"/>
         <input type="password" formControlName="password"/>
+        <a [routerLink]=" ['./login-google'] ">
+          GoogleLogin (not working)
+        </a>
         <button type="submit" value="login" (click)="login();">Login</button>
        </div>
     </div>

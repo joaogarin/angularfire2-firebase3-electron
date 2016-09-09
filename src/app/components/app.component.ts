@@ -36,7 +36,6 @@ export class AppComponent {
                 this.router.navigate(['home']);
             } else {
                 console.log('Logged out');
-                this.router.navigate(['login']);
             }
         });
     }

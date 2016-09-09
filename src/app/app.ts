@@ -18,6 +18,7 @@ import { AngularFire, AngularFireModule, AuthProviders, AuthMethods } from 'angu
  */
 import { HomeComponent } from './components/home.component';
 import { LoginComponent } from './components/login.component';
+import { LoginGoogleComponent } from './components/loginGoogle.component';
 import { RegisterComponent } from './components/register.component';
 import { AppComponent } from './components/app.component';
 
@@ -49,7 +50,7 @@ const firebaseAuthConfig = {
         RouterModule.forRoot(routes, { useHash: true }),
         AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
     ],
-    declarations: [AppComponent, HomeComponent, LoginComponent, RegisterComponent],
+    declarations: [AppComponent, HomeComponent, LoginComponent, LoginGoogleComponent, RegisterComponent],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
