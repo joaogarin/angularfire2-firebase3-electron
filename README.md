@@ -10,7 +10,7 @@ This is a demo of angular2 with firebase 3 and electron. You should create a con
         "apiKey": "yourfirebaseapikey",
         "authDomain": "yourfireID.firebaseapp.com",
         "databaseURL": "https://yourfireID.firebaseio.com",
-        "storageBucket": "",
+        "storageBucket": ""
     }
 }
 ```
